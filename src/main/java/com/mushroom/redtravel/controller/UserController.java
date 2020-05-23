@@ -39,6 +39,7 @@ public class UserController {
     @RequestMapping(value = "/user/login")
     @ResponseBody
     public Result<User> login(String username, String password, int role, HttpSession session) {
+        //todo 改进：使用validation进行后端登录参数的合法性二次校验  https://blog.csdn.net/github_38592071/article/details/105985641
         User userSession = (User) session.getAttribute("user");
         if (userSession != null) {
             return Result.success(userSession);
@@ -110,6 +111,7 @@ public class UserController {
     @RequestMapping(value = "/user/updateUserMag")
     @ResponseBody
     public Result<String> updateUserMag(UserVo userVo,HttpSession session){
+        //todo 改进：使用validation进行后端用户资料参数合法性的二次校验
         User user = (User)session.getAttribute("user");
         userVo.setId(user.getUid());
         Result<String> result = userService.updateUserMag(userVo);
@@ -220,6 +222,7 @@ public class UserController {
     @RequestMapping(value = "/user/updatePassword")
     @ResponseBody
     public Result<String> updatePassword(String oldPassword, String  newPassword, HttpSession session) {
+        //todo 改进：使用validation进行后端新旧密码参数合法性的二次校验
         User user =(User) session.getAttribute("user");
         if (user==null){
             return Result.error(new CodeMsg(0,"未登录"));
