@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 用户控制器
+ * 用户相关
  * @author Mushroom
  * @date 2020-02-06 16:32
  */

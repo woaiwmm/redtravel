@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @author Administrator
+ * 帖子相关
+ * @author Mushroom
  * @date 2020-03-01 19:37
  */
 @Controller

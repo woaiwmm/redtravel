@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * 红色人物控制器
+ * 红色人物相关
  * @author Mushroom
  * @date 2020-02-07 20:15
  */

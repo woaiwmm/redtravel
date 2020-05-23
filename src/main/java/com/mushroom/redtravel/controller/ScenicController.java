@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * 景点控制器
- *
+ * 红色景点相关
  * @author Mushroom
  * @date 2020-02-07 21:08
  */
