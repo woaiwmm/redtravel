@@ -1,0 +1,5 @@
+ul,li{ list-style:none;}
+a{text-decoration:none;color: #000000;outline: none;}
+a:active,a:visited,a:hover,a:hover{text-decoration:none;}
+.active {color: red;background:red;}
+

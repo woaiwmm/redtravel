@@ -1,0 +1,266 @@
+#content{
+    position: absolute;
+    z-index: -1;
+    background-image: url(../img/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width:900px;
+    width: 100%;
+    height: 100%;
+}
+.regscreen{
+    width:950px;
+    margin:0 auto;
+    height:475px;
+    position: relative;
+    top:140px;
+}
+.regscreen .left{
+    position: absolute;
+    top:0;
+    display:inline-block;
+    height: 475px;
+}
+.regscreen .left img{
+    height:100%;
+}
+.regscreen .right{
+    background-color: #fff;
+    position: absolute;
+    left:600px;
+    padding:20px;
+    width:350px;
+    height:475px;
+    display: inline-block;
+    border-radius:10px;
+    box-shadow: 8px 10px 8px 0 rgba(0,0,0,.2);
+    border: 0.5px solid  rgba(0,0,0,.2);
+}
+
+.regscreen .saveUser{
+    background-color: #DF0A16;
+    width:55%;
+    position: relative;
+    top:17px;
+    height:40px;
+    margin: 0 auto;
+    display: block;
+    color: cornsilk;
+}
+.regscreen .saveUser:hover{
+    opacity: 0.8;
+    color: cornsilk!important;
+}
+.regscreen .logo{
+    margin-top:17px;
+    text-shadow:3px 2px 2px #871016;
+}
+.regscreen .right p{
+    width: 100%;
+    text-align: center;
+    color:#9C9A99;
+    margin: 25px 0 5px 0;
+}
+.regscreen .right .down p{
+    margin: 10px auto;
+}
+.regscreen form{
+    width: 100%;
+    top:17px;
+    position: relative;
+}
+.regscreen .errorTxt{
+    display: block;
+    height: 30px;
+    width: 100%;
+    padding-left: 8px;
+    color:#DF0A16;
+}
+.regscreen .right p:last-child{
+    width: 100%;
+    position: relative;
+    top:40px;
+}
+.form-group .user {
+    background:url(../img/user.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 53.5%;
+    transform: translateY(-375%);
+    height: 30px;
+    width: 30px;
+    /*left: 0;*/
+}
+.form-group .password {
+    background:url(../img/password.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 53.5%;
+    transform: translateY(-195%);
+    height: 30px;
+    width: 30px;
+    /*left: 0;*/
+}
+.form-group .passwordagain {
+    background:url(../img/password.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 53.5%;
+    transform: translateY(-10%);
+    height: 30px;
+    width: 30px;
+    /*left: 0;*/
+}
+.form-group .txtUserName {
+    width:310px;
+    height: 40px;
+    margin-left: 0;
+    padding: 0 0 0 30px;
+    display: block;
+    font-size: 13px;
+}
+.form-group .txtPassWord {
+    width:310px;
+    height: 40px;
+    margin-left: 0;
+    padding: 0 0 0 30px;
+    display: block;
+    font-size: 13px;
+}
+.form-group .txtPassWordAgain {
+    width:310px;
+    height: 40px;
+    margin-left: 0;
+    padding: 0 0 0 30px;
+    display: block;
+    font-size: 13px;
+}
+
+/*新增，提交*/
+.picfile{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    height: 40px;
+}
+.selectpic{
+    width: 85%;
+    background-color: #f5f5f5;
+}
+.submitpic{
+    width: 48px;
+    float: left;
+    position:absolute;
+    top: 59.5%;
+    right: 0;
+    display: inline-block;
+    background-color: rgba(147, 147, 147, 0.5);
+}
+/*组织的注册，由于添加了上传图片功能，样式要做出相应改变*/
+/*regscreen替换为Ϊregscreen_OrgReg，right替换为Ϊright_OrgReg*/
+.regscreen_OrgReg{
+    width:950px;
+    margin:0 auto;
+    height:475px;
+    position: relative;
+    top:140px;
+}
+.regscreen_OrgReg .left{
+    position: absolute;
+    top:0;
+    display:inline-block;
+    height: 475px;
+}
+.regscreen_OrgReg .left img{
+    height:100%;
+}
+.regscreen_OrgReg .right_OrgReg{
+    background-color: #fff;
+    position: absolute;
+    left:600px;
+    padding:20px;
+    width:350px;
+    height:540px;
+    display: inline-block;
+    border-radius:10px;
+    box-shadow: 8px 10px 8px 0 rgba(0,0,0,.2);
+    border: 0.5px solid  rgba(0,0,0,.2);
+}
+.regscreen_OrgReg .saveUser{
+    background-color: #DF0A16;
+    width:55%;
+    position: relative;
+    top:17px;
+    height:40px;
+    margin: 0 auto;
+    display: block;
+    color: cornsilk;
+}
+.regscreen_OrgReg .saveUser:hover{
+    opacity: 0.8;
+    color: cornsilk!important;
+}
+.regscreen_OrgReg .logo{
+    margin-top:17px;
+    text-shadow:3px 2px 2px #871016;
+}
+.regscreen_OrgReg .right_OrgReg p{
+    width: 100%;
+    text-align: center;
+    color:#9C9A99;
+    margin: 25px 0 5px 0;
+}
+.regscreen_OrgReg .right_OrgReg .down p{
+    margin: 40px 0 0 0;
+}
+.regscreen_OrgReg form{
+    width: 100%;
+    top:15px;
+    position: relative;
+}
+.regscreen_OrgReg .errorTxt{
+    display: block;
+    height: 30px;
+    width: 100%;
+    padding-left: 8px;
+    color:#DF0A16;
+}
+.regscreen_OrgReg .right p:last-child{
+    width: 100%;
+    position: relative;
+    top:40px;
+}
+.form-group .user_OrgReg {
+    background:url(../img/user.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-430%);
+    height: 30px;
+    width: 30px;
+}
+.form-group .password_OrgReg {
+    background:url(../img/password.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-245%);
+    height: 30px;
+    width: 30px;
+}
+.form-group .passwordagain_OrgReg {
+    background:url(../img/password.png) no-repeat scroll center center transparent;
+    padding-left: 0;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-65%);
+    height: 30px;
+    width: 30px;
+}

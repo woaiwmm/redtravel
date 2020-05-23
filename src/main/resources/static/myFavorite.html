@@ -1,0 +1,236 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <!-- META TAGS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>个人中心-我的收藏</title>
+
+  <!-- Style Sheet-->
+  <link rel="stylesheet" href="css/layui.css" id='layui-css-css' type='text/css' media='all'/>
+  <link rel='stylesheet' id='bootstrap-css-css' href='css/bootstrap5152.css?ver=1.0' type='text/css' media='all'/>
+  <link rel='stylesheet' id='responsive-css-css' href='css/responsive5152.css?ver=1.0' type='text/css' media='all'/>
+  <link rel='stylesheet' id='main-css-css' href='css/main5152.css?ver=1.0' type='text/css' media='all'/>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+ <script src="js/html5.js"></script></script>
+ <![endif]-->
+
+
+</head>
+
+<body>
+<!--导航 starts-->
+<div style="background-color: snow" id="header">
+  <div id="headerMain">
+    <a href="index.html" id="logo">
+      <img src="img/logo-red.png">
+    </a>
+    <ul id="nav">
+      <li>
+        <a href="javascript:">
+          <div class="up"><img src="img/home_gruen.png"></div>
+          <div><img src="img/home_red.png"></div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div class="up"></div>
+          <div>红色地图</div>
+        </a>
+      </li>
+      <li>
+        <a href="great.html" >
+          <div class="up"></div>
+          <div>红色人物</div>
+        </a>
+      </li>
+      <li>
+        <a href="secnics.html">
+          <div class="up"></div>
+          <div>红色景点</div>
+        </a>
+      </li>
+      <li>
+        <a href="articles-list.html" class="active">
+          <div>寻迹红色</div>
+        </a>
+      </li>
+      <li class="enter">
+        <!-- 未登录时登录 -->
+        <div id="unLogin">
+          <a href="netlogin.html">登录</a> |
+          <a href="netregister.html">注册</a>
+
+        </div>
+        <!-- 已登录时显示 -->
+        <div id="alreadyLogin">
+          <span id="name" style="cursor: pointer;">null</span>
+          <span id="loginOut" style="margin-left: 10px;cursor: pointer">退出</span>
+        </div>
+      </li>
+    </ul>
+    <div id="arrow"></div>
+  </div>
+</div>
+<!--导航 ends-->
+
+<!-- 顶部 -->
+<div class="header-wrapper">
+
+  <!-- 顶部 搜索框 -->
+  <div class="search-area-wrapper">
+    <div class="search-area container">
+    </div>
+  </div>
+  <!-- 搜索框 -->
+
+  <!-- 顶部 -->
+  <div class="header-wrapper">
+
+    <!-- 内容 -->
+    <div class="page-container">
+      <div class="container">
+        <div class="row">
+
+          <ul class="breadcrumb">
+            <li><a href="#">个人中心</a><span class="divider">/</span></li>
+            <li class="active">我的收藏</li>
+          </ul>
+          <!-- 页面内容 -->
+          <div class="span12 main-listing">
+              <article id="postShow" class="format-standard type-post hentry clearfix">
+                <!--填充帖子-->
+                <h2>您暂未收藏任何帖子！</h2>
+              </article>
+            <button id="more" style="margin-left: 45%" type="button" class="layui-btn layui-btn-lg layui-btn-radius">更多</button>
+
+          </div>
+        </div>
+        </div>
+        <!-- end of sidebar -->
+      </div>
+    </div>
+  </div>
+
+  <!-- End of Footer -->
+  <footer class="foot">
+    <p>版权&copy;嘉应学院&nbsp;|&nbsp;地理科学与旅游学院&nbsp;|&nbsp;GIS专业&nbsp;|&nbsp;219团队<br>
+      地址：广东省梅州市梅松路嘉应学院校本部&nbsp;&nbsp;邮编：514000&nbsp;&nbsp;维护：219团队<br>
+      申明：本网页不做任何商业用途，只做教学实验，最终解释权归团队所有！
+    </p>
+  </footer>
+  <a href="#top" id="scroll-top"></a>
+
+  <!-- script -->
+<script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
+<script type='text/javascript' src='js/jquery.easing.1.34e44.js?ver=1.3'></script>
+<script type='text/javascript' src='js/jquery.liveSearchd5f7.js?ver=2.0'></script>
+<script type='text/javascript' src='js/jflickrfeed.js'></script>
+<script type='text/javascript' src='js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
+<script type='text/javascript' src='js/custom5152.js?ver=1.0'></script>
+<script src="layer/layer.js"></script>
+<script type="text/javascript" src="js/layui.js"></script>
+
+<script>
+  var index=0;
+  var status=1;//是否还有更多收藏帖子未展示，0没有更多了，1有更多
+    $(document).ready(function () {
+        //获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录
+                $("#unLogin").hide();
+                $("#alreadyLogin").show();
+                //取得用户昵称
+                var name = result.data.uname;
+                var sex = result.data.sex;
+                if (name == null) {
+                    $("#name").html("请设置昵称");
+                    $("#userName").append("昵称未设置");
+                    setTimeout(function(){
+                        layer.msg('您的昵称尚未设置，为了不影响您的正常使用，  请前往个人中心设置相关信息!');
+                    }, 1000);
+                } else {
+                    $("#name").html(name);
+                    $("#userName").append(name);
+                }
+            } else {
+                $("#alreadyLogin").hide();
+                layer.msg('未登录，请登录后使用该模块！', {icon: 0});
+                window.location.href = "netlogin.html";
+            }
+        }, "json");
+
+        //渲染帖子
+        $.post("/user/getCollect", {"index":index}, function (result) {
+            if(result.code==0)
+                return;
+            $("#postShow").empty();//清空节点内容
+            for(var i=0;i<result.data.length;i++){
+                var text="<header class='clearfix'>"+
+                    "<h3 class='post-title'>"+
+                    "<a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h3>"+
+                    "<div class='post-meta clearfix'>"+
+                    "<span class='date'>"+result.data[i].createTime+"</span>"+
+                    "<span class='category'>"+result.data[i].type+"</span>"+
+                    "<span class='comments'>"+result.data[i].commentsNumbers+" 评论</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span></div></header>"+
+                    "<p>"+result.data[i].introduction+"....<a class='readmore-link' href='single.html?id="+result.data[i].pid+"'>查看更多</a></p>";
+                $("#postShow").append(text);
+               index++;
+            }
+        }, "json");
+
+    });
+
+    //用户点击更多
+    $("#more").click(function () {
+       if(status==0){
+           layer.msg('没有更多收藏啦！', {icon: 0});
+           return;
+       }
+        //渲染帖子
+        $.post("/user/getCollect", {"index":index}, function (result) {
+            if(result.code==0){
+                layer.msg('没有更多收藏啦！', {icon: 0});
+                status=0;
+                return;
+            }
+            for(var i=0;i<result.data.length;i++){
+                var text="<header class='clearfix'>"+
+                    "<h3 class='post-title'>"+
+                    "<a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h3>"+
+                    "<div class='post-meta clearfix'>"+
+                    "<span class='date'>"+result.data[i].createTime+"</span>"+
+                    "<span class='category'>"+result.data[i].type+"</span>"+
+                    "<span class='comments'>"+result.data[i].commentsNumbers+" 评论</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span></div></header>"+
+                    "<p>"+result.data[i].introduction+"....<a class='readmore-link' href='single.html?id="+result.data[i].pid+"'>查看更多</a></p>";
+                $("#postShow").append(text);
+                index++;
+            }
+        }, "json");
+
+    });
+
+    //退出用户
+    $("#loginOut").click(function () {
+        $.post("/user/loginOut", {}, function (response) {
+        }, "json");
+        window.location.href = "articles-list.html";
+    });
+    //跳转至个人信息页
+    $("#name").click(function () {
+        window.location.href = "center.html";
+    });
+    </script>
+</body>
+
+</html>

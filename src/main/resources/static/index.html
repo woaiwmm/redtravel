@@ -1,0 +1,571 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>红色旅游</title>
+    <Link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <script src="src/jquery.min.js"></script>
+    <script src="src/index.js"></script>
+
+
+    <!-- 红色景点 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 红色景点-->
+</head>
+
+<body>
+<div id="main">
+    <div id="loading">
+        <div></div>
+        <!--进入网页的加载动画-->
+        <div></div>
+        <span></span>
+    </div>
+    <div style="background-color: snow" id="header">
+        <!--导航栏-->
+        <div id="headerMain">
+            <a href="index.html" id="logo">
+                <img src="img/logo-red.png">
+            </a>
+            <ul id="nav">
+                <li>
+                    <a href="javascript:">
+                        <div class="up"><img src="img/home_gruen.png"></div>
+                        <div><img src="img/home_red.png"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="up"></div>
+                        <div>红色地图</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="great.html">
+                        <div class="up"></div>
+                        <div>红色人物</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="secnics.html">
+                        <div class="up"></div>
+                        <div>红色景点</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="articles-list.html">
+                        <div>寻迹红色</div>
+                    </a>
+                </li>
+                <li class="enter">
+                    <!-- 未登录时登录 -->
+                    <div id="unLogin">
+                        <a href="netlogin.html">登录</a> |
+                        <a href="netregister.html">注册</a>
+
+                    </div>
+                    <!-- 已登录时显示 -->
+                    <div id="alreadyLogin">
+                        <span id="name" style="cursor: pointer;">null</span>
+                        <span id="loginOut" style="margin-left: 10px;cursor: pointer">退出</span>
+                    </div>
+                </li>
+
+            </ul>
+            <div id="arrow"></div>
+        </div>
+    </div>
+    <div id="content">
+        <ul id="menu">
+            <!--左边的悬浮导航栏-->
+            <h3>导航</h3>
+            <li><a class="active">首页</a></li>
+            <li><a>红色地图</a></li>
+            <li><a>红色人物</a></li>
+            <li><a>红色景点</a></li>
+        </ul>
+        <ul id="list">
+            <!--左边的内容列表-->
+            <li id="home" class="liList">
+                <!--home模块-->
+                <div id="homeContent" class="divList">
+                    <div class="intro">
+                        <h1 class="font-title">红色回忆</h1>
+                        <div class="start">线上地图可视化 + 多样化</div>
+                        <div class="start">打破传统红色旅游，体验不一样的新式旅游</div>
+                    </div>
+                </div>
+            </li>
+            <li id="course" class="liList">
+                <!--红色地图-->
+                <div id="courseContent" class="divList">
+                    <!--course模块-->
+                    <ul class="courseContent1">
+                        <a href="#">
+                            <h1 class="commonTitle">红色地图<span class="circle">&#10132</span></h1>
+                        </a>
+                        <div class="commonline"></div>
+                        <div class="commonsubtitle">
+                            <p>以中国地图为基准<br>
+                                利用POI点分析地图
+                            </p>
+                        </div>
+                    </ul>
+
+                    <div class="courseContent2 clearfix">
+                        <ul class="nav nav-1">
+                            <li>
+                                <div class="one">
+                                    <div class="iconbox-ico">
+                                        <img src="img/icon1.png">
+                                    </div>
+                                    <div class="iconbao-text">
+                                        <h3 class="iconbox-title">浏览</h3>
+                                        <div class="iconbox-desc">
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="two">
+                                    <div class="iconbox-ico">
+                                        <img src="img/icon2.png">
+                                    </div>
+                                    <div class="iconbao-text">
+                                        <h3 class="iconbox-title">查询</h3>
+                                        <div class="iconbox-desc">
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="three">
+                                    <div class="iconbox-ico">
+                                        <img src="img/icon3.png">
+                                    </div>
+                                    <div class="iconbao-text">
+                                        <h3 class="iconbox-title">关系</h3>
+                                        <div class="iconbox-desc">
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布<br>
+                                            浏览全国各地的红色景点分布
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li id="works" class="liList">
+                <!--红色人物【开始】-->
+                <div id="worksContent" class="divList">
+                    <!--works模块-->
+                    <ul class="worksContent1">
+                        <a href="great.html">
+                            <h1 class="commonTitle">红色人物<span class="circle">&#10132</span>
+                            </h1>
+                        </a>
+                        <div class="commonline"></div>
+                        <div class="commonsubtitle">
+                            <p>红色记忆可寻<br>
+                                革命从这里诞生
+                            </p>
+                        </div>
+                    </ul>
+                    <div class="worksContent2 clearfix">
+                        <ul class="nav nav-1" id="peopleShow">
+                            <!-- <li>
+                                <div class="onepic">
+                                    <img src="img/people1.jpg">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="twopic">
+                                    <a href="html/great_details.html"><img src="img/people1.jpg"></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="threepic">
+                                    <img src="img/people1.jpg">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fourpic">
+                                    <img src="img/people1.jpg">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fivepic">
+                                    <img src="img/people1.jpg">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sixpic">
+                                    <img src="img/people1.jpg">
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <!--红色人物【完】-->
+
+
+            <li id="about" class="liList">
+                <!--红色景点-->
+                <main>
+                    <header class="codrops-header">
+                        <h1 class="codrops-header__title"><a href="secnics.html" class="hsjd">红色景点<span class="circle">&#10132</span></a>
+                        </h1>
+                    </header>
+                    <div class="contentpic content--side">
+                        <div class="control control--grids">
+                            <span class="control__title">请选择浏览区域</span>
+                            <div class="control__item">
+                                <input class="control__radio" type="radio" name="grid-type" value="grid--type-a"
+                                       id="control-grid-a" checked>
+                                <label class="control__label" for="control-grid-a" id="showTrue">纪念馆</label>
+                            </div>
+                            <div class="control__item">
+                                <input class="control__radio" type="radio" name="grid-type" value="grid--type-b"
+                                       id="control-grid-b">
+                                <label class="control__label" for="control-grid-b">烈士墓</label>
+                            </div>
+                            <div class="control__item">
+                                <input class="control__radio" type="radio" name="grid-type" value="grid--type-c"
+                                       id="control-grid-c">
+                                <label class="control__label" for="control-grid-c">景区</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contentpic content--side content--right">
+                        <div class="control control--effects">
+                            <span class="control__title">请选择一种展示风格</span>
+                            <button class="control__btn" data-fx="Hapi">Hapi</button>
+                            <button class="control__btn" data-fx="Amun">Amun</button>
+                            <button class="control__btn" data-fx="Kek">Kek</button>
+                            <!--<button class="control__btn" data-fx="Isis">Isis</button>
+                    <button class="control__btn" data-fx="Montu">Montu</button>
+                    <button class="control__btn" data-fx="Osiris">Osiris</button>
+                    <button class="control__btn" data-fx="Satet">Satet</button>
+                    <button class="control__btn" data-fx="Atum">Atum</button>
+                    <button class="control__btn" data-fx="Ra">Ra</button>
+                    <button class="control__btn" data-fx="Sobek">Sobek</button>
+                    <button class="control__btn" data-fx="Ptah">Ptah</button>
+                    <button class="control__btn" data-fx="Bes">Bes</button>
+                    <button class="control__btn" data-fx="Seker">Seker</button>
+                    <button class="control__btn" data-fx="Nut">Nut</button>
+                    <button class="control__btn" data-fx="Shu">Shu</button>-->
+                        </div>
+                    </div>
+                    <div class="contentpic content--center">
+                        <div class="grid grid--type-a">
+                            <div class="grid__sizer"></div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url1" href="#"><img id="1" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url2" href="#"><img id="2" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url3" href="#"><img id="3" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url4" href="#"><img id="4" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url5" href="#"><img id="5" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url6" href="#"><img id="6" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url7" href="#"><img id="7" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url8" href="#"><img id="8" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url9" href="#"><img id="9" class="grid__img"
+                                                                              src="img/set1/1.jpg"
+                                                                              alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url10" href="#"><img id="10" class="grid__img"
+                                                                               src="img/set1/1.jpg"
+                                                                               alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" id="url11" href="#"><img id="11" class="grid__img"
+                                                                               src="img/set1/1.jpg"
+                                                                               alt="Some image"/></a>
+                            </div>
+                        </div>
+
+                        <div class="grid grid--type-b">
+                            <!--烈士墓18个-->
+                            <div class="grid__sizer"></div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/1.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/2.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/3.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/4.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/5.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/6.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/7.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/8.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/9.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/10.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/11.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/12.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/13.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/14.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/15.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/16.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/17.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set2/18.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                        </div>
+                        <div class="grid grid--type-c">
+                            <!--景区11个-->
+                            <div class="grid__sizer"></div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/1.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/2.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/3.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/4.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/5.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/6.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/7.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/8.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/9.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/10.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                            <div class="grid__item">
+                                <a class="grid__link" href="#"><img class="grid__img" src="img/set3/11.jpg"
+                                                                    alt="Some image"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!--<script src="src/index.js"></script>-->
+                <script src="src/jquery.min.js"></script>
+                <script src="js/imagesloaded.pkgd.min.js"></script>
+                <script src="js/masonry.pkgd.min.js"></script>
+                <script src="js/anime.min.js"></script>
+                <script src="js/aboutpic.js"></script>
+                <script src="layer/layer.js"></script>
+            </li>
+            <!--红色景点结束-->
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+
+
+        //获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录
+                $("#unLogin").hide();
+                $("#alreadyLogin").show();
+                //取得用户昵称
+                var name = result.data.uname;
+                if (name == null) {
+                    $("#name").html("请设置昵称");
+                    setTimeout(function(){
+                        layer.msg('您的昵称尚未设置，为了不影响您的正常使用，  请前往个人中心设置相关信息!');
+                    }, 1000);
+                } else {
+                    $("#name").html(name);
+                }
+            } else {
+                $("#alreadyLogin").hide();
+            }
+        }, "json");
+
+
+        // 获得红色人物
+        var peopleShow = "";
+        for (var i = 0; i < 6; i++) {
+            $.post("/people/getPeopleMsg", {
+                "id": getRandomNum(0, 500)
+            }, function (result) {
+                console.log("进入了回调方法");
+                if (result.code == 1) { //获得一个人物信息
+                    peopleShow = "<li>" +
+                        "<div class='onepic'>" +
+                        "<a href='great_details.html?id=" + result.data.pid + "'>" +
+                        "<img src='/image/redpeople/" + result.data.image + "'>" +
+                        "</a>" +
+                        "</div>" +
+                        "</li>";
+                    $("#peopleShow").after(peopleShow);
+
+                }
+            }, "json");
+        }
+
+        // 获得红色景点(纪念馆部分)
+        var index = 1;
+        for (i = 0; i < 11; i++) {
+            $.post("/scenic/getScenicMsg", {
+                "id": getRandomNum(0, 500)
+            }, function (result) {
+                if (result.code == 1) { //获得一个景点信息
+                    var arr = splitImageStr(result.data.image);
+                    var imgPath = "image/redscenic/" + arr[0];
+                    var urlPath = "secnics_details.html?id=" + result.data.sid;
+                    $("#" + index + "").attr('src', imgPath);
+                    $("#url" + index + "").attr('href', urlPath);
+                    index++;
+                }
+            }, "json");
+
+        }
+
+    });
+
+
+    // 切割景点的返回信息中的图片,返回一个数组
+    function splitImageStr(str) {
+        var arr;
+        // 在每个逗号处进行分隔。
+        arr = str.split(",");
+        return (arr);
+    }
+
+
+    // 获取最小值到最大值之前的整数随机数
+    //todo 可能造成重复数字,后期解决
+    function getRandomNum(Min, Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return (Min + Math.round(Rand * Range));
+    }
+
+    //退出用户
+    $("#loginOut").click(function () {
+        $.post("/user/loginOut", {}, function (response) {
+        }, "json");
+        window.location.href = "index.html";
+    });
+    //跳转至个人信息页
+    $("#name").click(function () {
+        window.location.href = "center.html";
+    });
+</script>
+
+
+</html>

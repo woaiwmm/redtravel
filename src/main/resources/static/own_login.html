@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人登录</title>
+		<link href="css/global.css" rel="stylesheet" />
+		<link href="css/login.css" rel="stylesheet" />
+		<!-- <link href="../js/login.js" rel="stylesheet" /> -->
+		<link href="src/bootstrap.min.css" rel="stylesheet" />
+		<script src="src/jquery.min.js"></script>
+		<script src="src/bootstrap.min.js"></script>
+		<script src="layer/layer.js"></script>
+	</head>
+
+	<body>
+		<div id="content">
+		</div>
+		<div class="loginscreen">
+			<div class="left">
+				<img src="img/pt.png" alt="红色旅游" />
+			</div>
+			<div class="right">
+				<div>
+					<h1 class="logo">红色记忆</h1>
+				</div>
+				<p>-登陆您的个人账户-</p>
+					<div class="form-group">
+						<i class="user"></i><input type="text" class="form-control txtUserName" placeholder="用户名由字母开头，可带数字、字母和下划线" />
+					</div>
+					<div class="form-group">
+						<i class="password"></i><input type="password" class="form-control txtPassWord" placeholder="密码必须且只能包含大小写字母和数字" />
+					</div>
+					<span class="errorTxt"></span>
+					<button class="btn loginUser">登 陆</button>
+				<p class="text-muted text-center">
+					<a href="#forgotPW" data-toggle="modal"><small>忘记密码了？</small></a> | <a href="netregister.html">注册一个新账号</a><br />
+					<a href="index.html"><small>再想想，返回首页</small></a>
+				</p>
+			</div>
+		</div>
+		<!-- 忘记密码[开始] -->
+		<div class="modal fade" id="forgotPW" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h5 class="modal-title" id="title">忘记密码</h5>
+					</div>
+					<div class="modal-body">
+						<!-- <form>
+							<div class="form-group">
+								<input type="text" class="form-control userName" placeholder="用户名由字母开头，可带数字、字母和下划线" />
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control passWord" placeholder="密码必须且只能包含大小写字母和数字" />
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control passWordAgain" placeholder="请确定密码" />
+							</div>
+							<span class="error"></span>
+						</form> -->
+							<span style="font-family: arial narrow ;font-size: 15px; color: firebrick; ">请联系网站管理员进行身份验证和密码重置</span>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+						<!-- <button type="button" class="btn btn-primary changePW">确定</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 忘记密码[结束] -->
+	</body>
+	<script>
+		<!-- 登录部分[开始] -->
+		$(document).ready(function() {
+			var username;
+			var password;
+			var role = 0;
+
+			$(".txtUserName").keyup(function() {
+				if (!checkUsername()) { //校验失败
+                    layer.tips('用户名必须由字母开头，可带数字、字母和下划线，长度在8-16之间！!', '.form-control.txtUserName');
+				} else {
+                    layer.tips('格式正确√', '.form-control.txtUserName');
+					username = $(".txtUserName").val();
+				}
+
+			});
+			$(".txtPassWord").keyup(function() {
+				if (!checkPassword()) { //校验失败
+                    layer.tips('密码必须包含大小写字母和数字的组合，不使用特殊字符，长度在8-16之间！', '.form-control.txtPassWord');
+				} else {
+                    layer.tips('格式正确√', '.form-control.txtPassWord');
+					password = $(".txtPassWord").val();
+				}
+			});
+
+			//点击注册
+			$(".loginUser").click(function() {
+				if (checkUsername() && checkPassword()) { //全部格式正确,发送登录请求
+					$.post("/user/login", {
+						"username": username,
+						"password": password,
+						"role": role
+					}, function(data) {
+						//回调函数
+						if (data.code == 1) { //登录成功
+                            layer.msg('登录成功!', {icon: 6});
+                            setTimeout(function(){
+                                window.history.go(-2);
+                            }, 1000);
+						}else {
+                            layer.msg('账号或密码错误!', {icon: 5});
+                        }
+					}, "json");
+				}
+			});
+
+
+		});
+		// 校验账号合法性
+		function checkUsername() {
+			var username = $(".txtUserName").val();
+			//用户名必须由字母开头，可带数字、字母和下划线，长度在8-16之间
+			var uPattern = /^[a-zA-Z]([a-zA-Z0-9_]){7,15}$/;
+			//正确匹配则输出 true
+			return uPattern.test(username);
+		}
+
+		//校验密码合法性
+		function checkPassword() {
+			var password = $(".txtPassWord").val();
+			// 密码必须包含大小写字母和数字的组合，不使用特殊字符，长度在8-16之间
+			var uPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,16}$/;
+			return uPattern.test(password);
+		}
+		<!-- 登录部分[结束] -->
+	</script>
+</html>

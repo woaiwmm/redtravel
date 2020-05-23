@@ -1,0 +1,15 @@
+html,body,div,span,p,h1,h2,h3,h4,form,input,button,article,section,img{
+    margin: 0 0;
+    padding: 0 0;
+}
+@font-face {
+    font-family: 'logoName';
+    src: url('../fonts/zhenhun.ttf');  
+}
+.logo{
+    font-size:45px;
+    font-weight:normal;
+    color:#DF0A16;
+    text-align: center;
+    font-family: logoName; 
+}

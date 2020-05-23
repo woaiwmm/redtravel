@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>组织注册</title>
+		<link href="src/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/global.css" rel="stylesheet" />
+		<link href="css/register.css" rel="stylesheet" />
+		<script src="src/jquery.min.js"></script>
+		<script src="src/bootstrap.min.js"></script>
+		<script src="layer/layer.js"></script>
+		<!-- <script src="../js/register.js"></script> -->
+	</head>
+
+	<body>
+		<div id="content"></div>
+		<div class="regscreen_OrgReg">
+			<div class="left">
+				<img src="img/pt.png" alt="红色旅游" />
+			</div>
+			<div class="right_OrgReg">
+				<div>
+					<h1 class="logo">红色记忆</h1>
+				</div>
+				<p>-创建一个新的组织账户-</p>
+				<div class="form-group">
+					<i class="user_OrgReg"></i><input type="text" class="form-control txtUserName" placeholder="请输入注册的用户名" />
+				</div>
+				<div class="form-group">
+					<i class="password_OrgReg"></i><input type="password" class="form-control txtPassWord" placeholder="请输入注册的密码" />
+				</div>
+				<div class="form-group">
+					<i class="passwordagain_OrgReg"></i><input type="password" class="form-control txtPassWordAgain" placeholder="请再次输入密码" />
+				</div>
+					
+				<div class="form-group">
+					<p style="margin-top: 0px;">请上传相关证明凭证</p>
+					<div class="picfile picdiv">
+						<input type="file" class="picfile selectpic" id="reportXML" name="reportXML" title="选择一个或多个图片文件" multiple="multiple"
+						 accept=".jpg,.jpeg,.png,.gif"><!-- <button type="button" class=" picfile submitpic" onclick="submitXML()">提交</button> -->
+					</div>
+					<!--
+                        <input type="file" id="picfile" name="picfile" class="form-control picfile" multiple="multiple" accept=".jpg,.jpeg,.png,.gif"/>
+                        <button type="submit" value="Submit" class="form-control submit">提交</button>
+                        <div class="uploadpic"></div>-->
+
+
+					<!--<input type="submit" class="form-control submit" value="上传"
+                     <label>请上传相关凭证</label><input type="file" name="file" class="form-control imgfile" multiple="multiple" accept=".jpg,.jpeg,.png,.gif"/>
+                    <button type="submit" value="Submit" class="form-control submit">上传</button>
+                     />-->
+				</div>
+				<span class="errorTxt"></span>
+				<button class="btn saveUser">注 册</button>
+				<div class="down">
+					<p class="text-muted text-center"><small>已经有账户了？</small><a href="netlogin.html">点此登录</a><br />
+						<a href="index.html"><small>再想想，返回首页</small></a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function() {
+			var username;
+			var password;
+			var role = 1;
+			var imageBase;
+			var imageName;
+			//获得图片名称以及base图片形式
+			$("input").change(function(e) {
+				imageName = $(this).val().split("\\")[2];
+				var file = e.target.files[0];
+				var reader = new FileReader();
+				reader.readAsDataURL(file); //读出 base64
+				reader.onloadend = function() {
+					// 图片的base64值
+					imageBase = reader.result.substring(reader.result.indexOf(",") + 1);
+				};
+			});
+
+			$(".txtUserName").keyup(function() {
+				if (!checkUsername()) { //校验失败
+                    layer.tips('用户名必须由字母开头，可带数字、字母和下划线，长度在8-16之间！!', '.form-control.txtUserName');
+				} else {
+                    layer.tips('格式正确√', '.form-control.txtUserName');
+					username = $(".txtUserName").val();
+				}
+
+			});
+			$(".txtPassWord").keyup(function() {
+				if (!checkPassword()) { //校验失败
+                    layer.tips('密码必须包含大小写字母和数字的组合，不使用特殊字符，长度在8-16之间!', '.form-control.txtPassWord');
+				} else {
+                    layer.tips('格式正确√', '.form-control.txtPassWord');
+					password = $(".txtPassWord").val();
+				}
+			});
+			$(".txtPassWordAgain").keyup(function() {
+				if (!checkPasswordIsSame()) { //校验失败
+                    layer.tips('密码输入不一致!', '.form-control.txtPassWordAgain');
+				} else {
+                    layer.tips('密码一致√', '.form-control.txtPassWordAgain');
+				}
+			});
+			//点击注册
+			$(".saveUser").click(function() {
+				if (checkUsername() && checkPassword() && checkPasswordIsSame()&&(imageBase!=undefined)) { //全部格式正确,发送注册请求
+					$.post("/user/regiest", {
+						"username": username,
+						"password": password,
+						"role": role,
+						"imageBase":imageBase,
+						"imageName":imageName
+					}, function(data) {
+						//回调函数
+						if(data.code==1){//注册成功
+                            layer.msg('注册成功!', {icon: 6});
+                            setTimeout(function(){
+                                window.history.go(-2);
+                            }, 1000);
+						}else {
+                            layer.msg('注册失败，账号已存在！', {icon: 5});
+                        }
+					}, "json");
+				}
+			});
+
+
+		});
+		// 校验账号合法性
+		function checkUsername() {
+			var username = $(".txtUserName").val();
+			//用户名必须由字母开头，可带数字、字母和下划线，长度在8-16之间
+			var uPattern = /^[a-zA-Z]([a-zA-Z0-9_]){7,15}$/;
+			//正确匹配则输出 true
+			return uPattern.test(username);
+		}
+
+		//校验密码合法性
+		function checkPassword() {
+			var password = $(".txtPassWord").val();
+			// 密码必须包含大小写字母和数字的组合，不使用特殊字符，长度在8-16之间
+			var uPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,16}$/;
+			return uPattern.test(password);
+		}
+		// 检查密码是否一致
+		function checkPasswordIsSame() {
+			var password = $(".txtPassWord").val();
+			var passwordAgain = $(".txtPassWordAgain").val();
+			if (password === passwordAgain) {
+				return true;
+			}
+		}
+	</script>
+</html>

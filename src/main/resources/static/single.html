@@ -1,0 +1,414 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>寻迹红色-文章内容</title>
+
+    <!-- Style Sheet-->
+    <link rel="stylesheet" href="css/layui.css" id='layui-css-css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='bootstrap-css-css' href='css/bootstrap5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='responsive-css-css' href='css/responsive5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='main-css-css' href='css/main5152.css?ver=1.0' type='text/css' media='all'/>
+    <!--<link rel='stylesheet' id='custom-css-css' href='../css/custom5152.html?ver=1.0' type='text/css' media='all' />-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script></script>
+    <![endif]-->
+
+
+</head>
+
+<body >
+<!--导航栏 start-->
+<div style="background-color: snow" id="header">
+    <!--导航栏-->
+    <div id="headerMain">
+        <a href="index.html" id="logo">
+            <img src="img/logo-red.png">
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="javascript:">
+                    <div class="up"><img src="img/home_gruen.png"></div>
+                    <div><img src="img/home_red.png"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="up"></div>
+                    <div>红色地图</div>
+                </a>
+            </li>
+            <li>
+                <a href="great.html">
+                    <div class="up"></div>
+                    <div>红色人物</div>
+                </a>
+            </li>
+            <li>
+                <a href="secnics.html">
+                    <div class="up"></div>
+                    <div>红色景点</div>
+                </a>
+            </li>
+            <li>
+                <a href="articles-list.html">
+                    <div>寻迹红色</div>
+                </a>
+            </li>
+            <li class="enter">
+                <!-- 未登录时登录 -->
+                <div id="unLogin">
+                    <a href="netlogin.html">登录</a> |
+                    <a href="netregister.html">注册</a>
+
+                </div>
+                <!-- 已登录时显示 -->
+                <div id="alreadyLogin">
+                    <span id="name" style="cursor: pointer;">null</span>
+                    <span id="loginOut" style="margin-left: 10px;cursor: pointer">退出</span>
+                </div>
+            </li>
+
+        </ul>
+        <div id="arrow"></div>
+    </div>
+</div>
+
+<div style="height: 30px"></div>
+
+
+<!-- 内容 -->
+<div class="page-container">
+    <div class="container">
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="#">活动广场</a><span class="divider">/</span></li>
+                <li class="active">帖子详情</li>
+            </ul>
+
+            <!-- 页面内容 -->
+            <div class="span12 page-content">
+
+
+                <article class=" type-post format-standard hentry clearfix">
+
+                    <h1 id="title" class="post-title"></h1>
+                    <img id="collect" title="收藏" style="position: absolute;top: 125px;right: 285px;cursor: pointer" src="img/未收藏.png"/>
+                    <div id="showMainTextAfter" class="post-meta clearfix">
+                        <span id="createTime" class="date"></span>
+                        <span id="type" class="category"></span>
+                        <span id="userName"></span>
+                        <span class="commentsNumbers" class="comments"></span>
+                    </div>
+                    <!--主内容-->
+
+                    <!--主内容[完]-->
+                    <!--点赞-->
+                    <div id="wantGood" class="like-btn">
+                            <span id="goodNumbers" class="like-it ">0</span>
+                    </div>
+
+                    <!--开始评论-->
+                    <section id="comments">
+
+                        <h3 class="commentsNumbers" id="comments-title"></h3>
+
+                        <ol id="CommentaryList" class="commentlist">
+
+                        </ol>
+
+                        <div id="respond">
+
+                            <h3>发表评论</h3>
+                            <div>
+                                <textarea class="span8" name="comment" id="comment" cols="58" rows="10"></textarea>
+                            </div>
+
+                            <div>
+                                <button id="sendCommentary" type="button" class="layui-btn layui-btn-radius layui-btn-warm">发送</button>
+                            </div>
+                            </form>
+
+                        </div>
+
+                    </section>
+
+            </div>
+            <!-- 结束评论 -->
+        </div>
+
+        </section>
+        </aside>
+    </div>
+    <!-- end of sidebar -->
+</div>
+</div>
+<footer class="foot">
+    <p>版权&copy;嘉应学院&nbsp;|&nbsp;地理科学与旅游学院&nbsp;|&nbsp;GIS专业&nbsp;|&nbsp;219团队<br>
+        地址：广东省梅州市梅松路嘉应学院校本部&nbsp;&nbsp;邮编：514000&nbsp;&nbsp;维护：219团队<br>
+        申明：本网页不做任何商业用途，只做教学实验，最终解释权归团队所有！
+    </p>
+</footer>
+<a href="#top" id="scroll-top"></a>
+
+<!-- script -->
+<script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
+<script type='text/javascript' src='js/jquery.easing.1.34e44.js?ver=1.3'></script>
+<script type='text/javascript' src='js/jquery.liveSearchd5f7.js?ver=2.0'></script>
+<script type='text/javascript' src='js/jflickrfeed.js'></script>
+<script type='text/javascript' src='js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
+<script type='text/javascript' src='js/custom5152.js?ver=1.0'></script>
+<script src="layer/layer.js"></script>
+<script type="text/javascript" src="js/layui.js"></script>
+
+</body>
+<script>
+    var flag=0;//全局变量flag，1代表已经收藏帖子，0代表未收藏
+    var status=0;//1代表用户已经点赞过帖子，0代表未点赞
+    //设置为同步请求
+    $.ajaxSetup({
+        async: false
+    });
+    $(document).ready(function () {
+        //获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录
+                $("#unLogin").hide();
+                $("#alreadyLogin").show();
+                //取得用户昵称
+                var name = result.data.uname;
+                if (name == null) {
+                    $("#name").html("请设置昵称");
+                    setTimeout(function(){
+                        layer.msg('您的昵称尚未设置，为了不影响您的正常使用，  请前往个人中心设置相关信息!');
+                    }, 1000);
+                } else {
+                    $("#name").html(name);
+                }
+               //检查帖子收藏状态
+                //todo 突然想到优化的点，其实不用传uid，因为请求会带上cookie，后端从session中拿取用户信息uid就行了
+                $.post("/post/isCollectPost", {"uid":result.data.uid,"pid":getUrlParam("id")}, function (result) {
+                    if(result.code==1){//该用户收藏了该帖子
+                        $("#collect").attr('src',"img/已收藏.png");
+                        flag=1;//帖子设置为已收藏
+                    }
+                }, "json");
+                //检查帖子点赞状态
+                $.post("/post/checkGoodStatus", {"uid":result.data.uid,"pid":getUrlParam("id")}, function (result) {
+                    if(result.code==1){//该用户已点赞了该帖子
+                        status=1;//帖子设置为已点赞
+                    }
+                }, "json");
+                addPug();//添加浏览足迹
+            } else {
+                $("#alreadyLogin").hide();
+            }
+        }, "json");
+
+
+        getPostForId(); //根据帖子id获得帖子信息
+
+        var commentaryName;
+        //加载评论
+        //todo 考虑到如果评论数非常大的时候，一次性读取对前后端的压力都很大，这里应该更好的做法是开始只展示5条评论，有个“更多”按钮，点击继续加载
+        $.post("/post/getCommentary", {"id": getUrlParam("id")}, function (result) {
+            if (result.code == 1) { //获取成功
+                for (var i = 0; i < result.data.length; i++) {
+                    //获得评论人的昵称
+                    $.post("/user/getUserNameForId", {"id": result.data[i].uid}, function (result) {
+                        if (result.code == 1) { //获取成功
+                            commentaryName=result.data;
+                        }
+                    }, "json");
+
+                    var text = "<li class='comment even thread-even depth-1' >" +
+                        "<article >" +
+                        "<a href='#'>" +
+                        "<img alt='' src='img/support.png' class='avatar avatar-60 photo' height='60' width='60'>" +
+                        "</a>" +
+                        "<div class='comment-meta'>" +
+                        "<h5 class='author'>" +
+                        "<cite class='fn'>" +
+                        "<a href='#' rel='external nofollow' class='url'>"+commentaryName+"</a>" +
+                        "</cite>" +
+                        "</h5>" +
+                        "<p class='date'>" +
+                        "<time>"+result.data[i].createTime+"</time>" +
+                        "</p>" +
+                        "</div>" +
+                        "<div class='comment-body'>" +
+                        "<p>"+result.data[i].title+"</p>" +
+                        "</div>" +
+                        "</article>" +
+                        "</li>";
+                    $("#CommentaryList").append(text);
+                }
+
+            }
+        }, "json");
+
+    });
+
+
+    var uid;//评论的用户id
+    //用户评论
+    $("#sendCommentary").click(function(){
+        var pid=getUrlParam("id");//被评论的帖子id
+        var title=$("#comment").val();//评论内容
+        if(title.length<5){
+            layer.msg('评论内容需要5个字以上！', {icon: 0});
+            return;
+        }
+        //校验用户是否已登录，并获得用户id
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录成功,可以评论
+                uid=result.data.uid;
+                //评论
+                $.post("/post/sendCommentary", {"uid": uid,"pid":pid,"title":title}, function (result) {
+                    if (result.code == 1) { //评论成功，重新刷新页面
+                        layer.msg('评论成功！', {icon: 6});
+                        setTimeout(function(){
+                            window.location.reload();
+                        }, 1000);
+
+                    }else{
+                        layer.msg('评论失败，请稍后再试！', {icon: 5});
+                    }
+                }, "json");
+            }else{
+                layer.msg('请登录后使用！', {icon: 0});
+                return;
+            }
+        }, "json");
+    });
+
+    //用户点击收藏
+    $("#collect").click(function () {
+        //首先判断用户是否已经登录，未登录则不允许点击
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录成功,可以点击
+               //修改收藏状态
+                $.post("/post/updateCollectStatus", {"uid": result.data.uid,"pid":getUrlParam("id"),"flag":flag}, function (result) {
+                    if(result.code==0) {
+                        layer.msg('操作失败，请稍后再试！', {icon: 5});
+                        return;
+                    }
+                }, "json");
+                if(flag==0){
+                    flag=1;
+                    $("#collect").attr('src',"img/已收藏.png");
+                    layer.msg('收藏成功！', {icon: 6});
+                }else {
+                    flag=0;
+                    $("#collect").attr('src',"img/未收藏.png");
+                }
+
+            }else{
+                layer.msg('请登录后使用！', {icon: 0});
+                return;
+            }
+        }, "json");
+
+
+    });
+
+    //根据id得到用户信息
+    function getUser(id) {
+        $.post("/user/getUserNameForId", {"id": id}, function (result) {
+            if (result.code == 1) { //获取成功
+                $("#userName").html(result.data);
+            }
+        }, "json");
+    }
+
+    //点赞
+    $("#wantGood").click(function () {
+        //首先判断用户是否已经登录，未登录则不允许点击
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录成功,可以点击
+                if(status==1){
+                    layer.msg('您已经点过赞啦，请勿重复点赞', {icon: 0});
+                    return;
+                }
+                //未点过赞
+                $.post("/post/wantGood", {"uid":result.data.uid,"pid":getUrlParam("id")}, function (result) {
+                    if (result.code == 1) { //点赞成功，刷新页面
+                        status=1;
+                        layer.msg('你给文章点了个大大的赞！', {icon: 6});
+                        window.location.reload();
+                    }else{
+                        layer.msg('点赞失败，请稍后再试！', {icon: 5});
+                    }
+
+                }, "json");
+            }else{
+                layer.msg('请登录后使用！', {icon: 0});
+                return;
+            }
+        }, "json");
+    });
+
+
+
+
+
+    //根据帖子id获得帖子信息
+    function getPostForId() {
+
+        $.post("/post/getPostForId", {"id": getUrlParam("id")}, function (result) {
+            if (result.code == 1) { //获取成功
+                getUser(result.data.uid);
+                $("#title").html(result.data.title);
+                $("#createTime").html(result.data.createTime);
+                $("#type").html(result.data.type);
+                $("#goodNumbers").html(result.data.goodNumbers);
+                $(".commentsNumbers").html(result.data.commentsNumbers + " 评论");
+                $("#showMainTextAfter").after(result.data.mainText);
+
+            } else {
+                layer.msg('加载失败，请稍后再试！', {icon: 5});
+            }
+        }, "json");
+    }
+
+    //登录用户浏览帖子，记录在用户的浏览足迹里
+    function addPug() {
+        $.post("/user/addPug", {"pid":getUrlParam("id")}, function (result) {
+        }, "json");
+    }
+
+
+
+    // 获得url携带过来的参数值
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+    //退出用户
+    $("#loginOut").click(function () {
+        $.post("/user/loginOut", {}, function (response) {
+        }, "json");
+        window.location.href = "articles-list.html";
+    });
+    //跳转至个人信息页
+    $("#name").click(function () {
+        window.location.href = "center.html";
+    });
+</script>
+</html>

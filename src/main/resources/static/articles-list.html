@@ -1,0 +1,427 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>寻迹红色-活动广场</title>
+
+    <!-- Style Sheet-->
+
+    <link rel="stylesheet" href="css/layui.css" id='layui-css-css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='bootstrap-css-css' href='css/bootstrap5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='responsive-css-css' href='css/responsive5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='main-css-css' href='css/main5152.css?ver=1.0' type='text/css' media='all'/>
+
+
+
+
+
+    <!--<link rel='stylesheet' id='custom-css-css' href='../css/custom5152.html?ver=1.0' type='text/css' media='all' />-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+
+
+</head>
+
+<body>
+<!--导航 starts-->
+<div style="background-color: snow" id="header">
+    <div id="headerMain">
+        <a href="index.html" id="logo">
+            <img src="img/logo-red.png">
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="javascript:">
+                    <div class="up"><img src="img/home_gruen.png"></div>
+                    <div><img src="img/home_red.png"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="up"></div>
+                    <div>红色地图</div>
+                </a>
+            </li>
+            <li>
+                <a href="great.html">
+                    <div class="up"></div>
+                    <div>红色人物</div>
+                </a>
+            </li>
+            <li>
+                <a href="secnics.html">
+                    <div class="up"></div>
+                    <div>红色景点</div>
+                </a>
+            </li>
+            <li>
+                <a href="articles-list.html" class="active">
+                    <div>寻迹红色</div>
+                </a>
+            </li>
+            <li class="enter">
+                <!-- 未登录时登录 -->
+                <div id="unLogin">
+                    <a href="netlogin.html">登录</a> |
+                    <a href="netregister.html">注册</a>
+
+                </div>
+                <!-- 已登录时显示 -->
+                <div id="alreadyLogin">
+                    <span id="name" style="cursor: pointer;">null</span>
+                    <span id="loginOut" style="margin-left: 10px;cursor: pointer">退出</span>
+                </div>
+            </li>
+        </ul>
+        <div id="arrow"></div>
+    </div>
+</div>
+<!--导航 ends-->
+
+
+
+<!-- 顶部 -->
+<div class="header-wrapper">
+
+    <!-- 顶部 搜索框 -->
+    <div class="search-area-wrapper">
+        <div class="search-area container">
+            <h3 class="search-header">寻迹红色</h3>
+            <p class="search-tag-line">你可以在这里找到一条适合你的时空隧道!</p>
+
+            <form id="search-form" class="search-form clearfix" method="get" action="serchResult.html" autocomplete="off">
+                <input class="search-term required" type="text"  name="markWord" placeholder="请输入关键词"
+                       title="* 内容为空，请输入关键词!"/>
+                <input id="search" class="search-btn" type="submit"   value="搜索"/>
+                <div id="search-error-container"></div>
+            </form>
+        </div>
+    </div>
+    <!-- 搜索框 -->
+
+
+</div>
+<!-- 内容 -->
+<div class="page-container">
+    <div class="container">
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="#">寻迹红色</a><span class="divider">/</span></li>
+                <li class="active">活动广场</li>
+            </ul>
+
+            <div class="span8 main-listing">
+
+                <article id="postShow" class="format-standard type-post hentry clearfix">
+                    <!--填充帖子-->
+                </article>
+
+                <!--页码-->
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li id="prev"><a  style="font-size: 20px" href="javascript:void(0);" onclick="getPost(1)">上一页</a>
+                        </li>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <button id="wantPost" type="button" class="layui-btn layui-btn-lg layui-btn-radius">发帖</button>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                        <li id="next"><a  style="font-size: 20px" href="javascript:void(0); " onclick="getPost(0)">下一页</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--热门路线-->
+        <div  class="right_row">
+            <aside class="span4 page-sidebar">
+                <section class="widget">
+                    <div class="support-widget">
+                        <img style="position: absolute;top: 395px;right: 590px" src="img/热门路线.png"/>
+                        <h3 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            热门路线</h3>
+                        <ul id="hotPath" class="articles">
+                            <!--填充热门路线-->
+                        </ul>
+                    </div>
+                </section>
+                </aside>
+            </div>
+
+        <!--经典路线-->
+        <div  class="right_row">
+            <aside class="span4 page-sidebar">
+                <section class="widget">
+                    <div class="support-widget">
+                        <img style="position: absolute;top: 880px;right: 590px" src="img/经典路线.png"/>
+                        <h3 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            经典路线</h3>
+                        <ul id="classicPath" class="articles">
+                            <!--填充经典路线-->
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+    </div>
+</div>
+
+<footer class="foot">
+    <p>版权&copy;嘉应学院&nbsp;|&nbsp;地理科学与旅游学院&nbsp;|&nbsp;GIS专业&nbsp;|&nbsp;219团队<br>
+        地址：广东省梅州市梅松路嘉应学院校本部&nbsp;&nbsp;邮编：514000&nbsp;&nbsp;维护：219团队<br>
+        申明：本网页不做任何商业用途，只做教学实验，最终解释权归团队所有！
+    </p>
+</footer>
+<a href="#top" id="scroll-top"></a>
+
+
+<!-- script -->
+<script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
+<script type='text/javascript' src='js/jquery.easing.1.34e44.js?ver=1.3'></script>
+<script type='text/javascript' src='js/jquery.liveSearchd5f7.js?ver=2.0'></script>
+<script type='text/javascript' src='js/jflickrfeed.js'></script>
+<script type='text/javascript' src='js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
+<script type='text/javascript' src='js/custom5152.js?ver=1.0'></script>
+<script src="layer/layer.js"></script>
+<script type="text/javascript" src="js/layui.js"></script>
+</body>
+<script>
+    //设置为同步请求
+    $.ajaxSetup({
+        async: false
+    });
+
+    var count;//帖子总数
+    var cur;//帖子当前的页码
+    var lave;//最后页码的帖子数量;
+    $(document).ready(function () {
+
+
+
+
+//获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录
+                $("#unLogin").hide();
+                $("#alreadyLogin").show();
+//取得用户昵称
+                var name = result.data.uname;
+                if (name == null) {
+                    $("#name").html("请设置昵称");
+                    $("#userName").append("昵称未设置");
+                    setTimeout(function(){
+                        layer.msg('您的昵称尚未设置，为了不影响您的正常使用，  请前往个人中心设置相关信息!');
+                    }, 1000);
+                } else {
+                    $("#name").html(name);
+                    $("#userName").append(name);
+                }
+            } else {
+                $("#alreadyLogin").hide();
+            }
+        }, "json");
+
+        //获得帖子总数
+        $.post("/post/getPostCount", {}, function (result) {
+            if(result.code=0){
+                layer.msg('帖子加载失败，请稍后再试哦！', {icon: 0});
+                return;
+            }
+            count=result.data;
+        }, "json");
+
+        //渲染帖子
+        $.post("/post/getPost", {"index":count-4,"end":count}, function (result) {
+            if(result.code=0){
+                layer.msg('帖子加载失败，请稍后再试哦！', {icon: 0});
+                return;
+            }
+            for(var i=0;i<result.data.length;i++){
+                var text="<header class='clearfix'>"+
+                    "<h3 class='post-title'>"+
+                    "<a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h3>"+
+                    "<div class='post-meta clearfix'>"+
+                    "<span class='date'>"+result.data[i].createTime+"</span>"+
+                    "<span class='category'>"+result.data[i].type+"</span>"+
+                    "<span class='comments'>"+result.data[i].commentsNumbers+" 评论</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span></div></header>"+
+                    "<p>"+result.data[i].introduction+"....<a class='readmore-link' href='single.html?id="+result.data[i].pid+"'>查看更多</a></p>";
+                $("#postShow").prepend(text);
+                console.log(result.data[i].pid);
+                count--;
+            }
+            cur=1;
+            $("#prev").addClass("disabled");
+            if(count<=0){//禁止下一页
+                $("#next").addClass("disabled");
+            }
+        }, "json");
+
+//       //渲染热门路线
+        $.post("/post/getPath", {"type":"热门路线"}, function (result) {
+            if(result.code=0){
+                layer.msg('帖子加载失败，请稍后再试哦！', {icon: 0});
+                return;
+            }
+            for (var i=0;i<result.data.length;i++){
+                var text="<li class='article-entry standard'>"+
+                    "<h4><a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h4>" +
+                    "<span class='article-meta'>"+result.data[i].createTime+"</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span>"+
+                    "</li>";
+                $("#hotPath").append(text);
+            }
+
+
+        }, "json");
+
+        //       渲染经典路线
+        $.post("/post/getPath", {"type":"经典路线"}, function (result) {
+            if(result.code=0){
+                layer.msg('帖子加载失败，请稍后再试哦！', {icon: 0});
+                return;
+            }
+            if(result.code=0){
+                layer.msg('帖子加载失败，请稍后再试哦！', {icon: 0});
+                return;
+            }
+            for (var i=0;i<result.data.length;i++){
+                var text="<li class='article-entry standard'>"+
+                    "<h4><a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h4>" +
+                    "<span class='article-meta'>"+result.data[i].createTime+"</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span>"+
+                    "</li>";
+                $("#classicPath").append(text);
+            }
+
+        }, "json");
+
+    });
+
+
+
+
+    // 获得帖子,0下一页 ,1上一页
+    function getPost(code) {
+      if(code==1){
+          if(cur==1)
+              return;
+          if(count<=0) {//当前在最后一页
+              count = lave + 5;
+          }else{
+              count+=5;
+          }
+          postPrevPage();
+      }else{
+          if(count<=0)
+              return;
+          postNextPage();
+      }
+    }
+
+    //下一页
+    function postNextPage() {
+        $("#postShow").empty();//清空节点内容
+        //渲染帖子
+        $.post("/post/getPost", {"index":count-4,"end":count}, function (result) {
+            if(result.code==0)
+                return;
+            var length=result.data.length;
+                lave=length;
+            for(var i=0;i<length;i++){
+                var text="<header class='clearfix'>"+
+                    "<h3 class='post-title'>"+
+                    "<a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h3>"+
+                    "<div class='post-meta clearfix'>"+
+                    "<span class='date'>"+result.data[i].createTime+"</span>"+
+                    "<span class='category'>"+result.data[i].type+"</span>"+
+                    "<span class='comments'>"+result.data[i].commentsNumbers+" 评论</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span></div></header>"+
+                    "<p>"+result.data[i].introduction +"....<a class='readmore-link' href='single.html?id="+result.data[i].pid+"'>查看更多</a></p>";
+                $("#postShow").prepend(text);
+                console.log(result.data[i].pid);
+                count--;
+            }
+            cur++;
+            $("#prev").removeClass("disabled");//可以点击上一页
+            if(count<=0){//禁止下一页
+                $("#next").addClass("disabled");
+            }
+        }, "json");
+    };
+
+    //上一页
+    function postPrevPage() {
+        $("#postShow").empty();//清空节点内容
+
+        //渲染帖子
+        $.post("/post/getPost", {"index":count-4,"end":count}, function (result) {
+            if(result.code==0)
+                return;
+            var length=result.data.length;
+            for(var i=0;i<length;i++){
+                var text="<header class='clearfix'>"+
+                    "<h3 class='post-title'>"+
+                    "<a href='single.html?id="+result.data[i].pid+"'>"+result.data[i].title+"</a></h3>"+
+                    "<div class='post-meta clearfix'>"+
+                    "<span class='date'>"+result.data[i].createTime+"</span>"+
+                    "<span class='category'>"+result.data[i].type+"</span>"+
+                    "<span class='comments'>"+result.data[i].commentsNumbers+" 评论</span>"+
+                    "<span class='like-count'>"+result.data[i].goodNumbers+"</span></div></header>"+
+                    "<p>"+result.data[i].introduction +"....<a class='readmore-link' href='single.html?id="+result.data[i].pid+"'>查看更多</a></p>";
+                $("#postShow").prepend(text);
+                console.log(result.data[i].pid);
+            }
+            cur--;
+            $("#next").removeClass("disabled");//可以点击下一页
+            if(cur==1){//当前在第一页，禁止上一页
+                $("#prev").addClass("disabled");
+            }
+        }, "json");
+    };
+
+    //发帖
+    $("#wantPost").click(function () {
+        //获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录，跳转到发帖页面
+                window.location.href = "articles-post.html";
+            } else {
+                layer.msg('未登录，请登录后尝试！', {icon: 0});
+            }
+        }, "json");
+    });
+
+    //退出用户
+    $("#loginOut").click(function () {
+        $.post("/user/loginOut", {}, function (response) {
+        }, "json");
+        window.location.href = "articles-list.html";
+    });
+    //跳转至个人信息页
+    $("#name").click(function () {
+        window.location.href = "center.html";
+    });
+
+</script>
+
+</html>

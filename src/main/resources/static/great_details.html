@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>红色人物-内容介绍</title>
+    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
+    <!-- <link href="../css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--新增-删除 <link rel="stylesheet" type="text/css" href="../css/greats.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/article.css">
+</head>
+
+<body>
+<!--新增-修改 导航栏 start
+ <iframe style="display:block" src="nav.html" scrolling="no" frameborder="0" width="100%" height="80px"></iframe>-->
+
+<!--导航 starts-->
+<div style="background-color: snow" id="header">
+    <div id="headerMain">
+        <a href="index.html" id="logo">
+            <img src="img/logo-red.png">
+        </a>
+        <ul id="nav">
+            <li>
+                <a href="javascript:">
+                    <div class="up"><img src="img/home_gruen.png"></div>
+                    <div><img src="img/home_red.png"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="up"></div>
+                    <div>红色地图</div>
+                </a>
+            </li>
+            <li>
+                <a href="great.html" class="active">
+                    <div class="up"></div>
+                    <div>红色人物</div>
+                </a>
+            </li>
+            <li>
+                <a href="secnics.html">
+                    <div class="up"></div>
+                    <div>红色景点</div>
+                </a>
+            </li>
+            <li>
+                <a href="articles-list.html">
+                    <div>寻迹红色</div>
+                </a>
+            </li>
+            <li class="enter">
+                <!-- 未登录时登录 -->
+                <div id="unLogin">
+                    <a href="netlogin.html">登录</a> |
+                    <a href="netregister.html">注册</a>
+
+                </div>
+                <!-- 已登录时显示 -->
+                <div id="alreadyLogin">
+                    <span id="name" style="cursor: pointer;">null</span>
+                    <span id="loginOut" style="margin-left: 10px;cursor: pointer">退出</span>
+                </div>
+            </li>
+        </ul>
+        <div id="arrow"></div>
+    </div>
+</div>
+<!--导航 ends-->
+<!--详细介绍 starts-->
+<div class="client">
+    <div class="container">
+        <div class="article-top">
+            <div class="article-title col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 ">
+                <!--解决重叠-->
+                <div style="height: 35px"></div>
+                <!--新增-修改 增加样式-->
+                <h2 id="peopleName"><strong></strong></h2>
+                <span id="peopleAdress"></span>
+                <!--新增-修改 人物概要=》人物籍贯-->
+            </div>
+            <div class="article-choose col-md-4 col-sm-5 col-xs-6 ">
+                <!--新增-修改 增加样式，更改上一章和下一章的位置-->
+                <a href="#" >
+                    <button class="col-md-3 col-sm-3 col-xs-3" id="artBeforeTop"
+                            value="上一章" onclick="prevPeople()">上一章
+                    </button>
+                </a>
+                <!--新增-修改 增加样式-->
+                <a href="great.html" title="红色人物">
+                    <button class="col-md-3 col-sm-3 col-xs-3" id="artReturn"
+                            value="返回">返回
+                    </button>
+                </a>
+                <!--新增-修改 增加样式-->
+                <a href="#" >
+                    <button class="col-md-3 col-sm-3 col-xs-3" id="atrAfterTop"
+                            value="下一章" onclick="nextPeople()">下一章
+                    </button>
+                </a>
+                <!--新增-修改 增加样式-->
+            </div>
+        </div>
+        <div class="article-container">
+
+            <div class="img-container">
+                <img id="peopleImg" style="height: 400px;margin: 20px" src="#">
+            </div>
+
+            <h2 id="peopleText"></h2>
+        </div>
+        <div class="article-choose col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-4">
+            <!--新增-修改 增加样式-->
+            <a href="#">
+                <button class="col-md-3 col-sm-3 col-xs-3 " id="artBeforeDown"
+                        value="上一章" onclick="prevPeople()">上一章
+                </button>
+            </a>
+            <!--新增-修改 增加样式-->
+            <a href="great.html" title="红色人物">
+                <button class="col-md-3 col-sm-3 col-xs-3" id=" artReturn"
+                        value="返回">返回
+                </button>
+            </a>
+            <!--新增-修改 增加样式-->
+            <a href="#" >
+                <button class="col-md-3 col-sm-3 col-xs-3" id="atrAfterDown"
+                        value="下一章" onclick="nextPeople()">下一章
+                </button>
+            </a>
+            <!--新增-修改 增加样式-->
+        </div>
+    </div>
+</div>
+<!--详细内容 ends-->
+
+<!--新增-删除一个footer 脚部-->
+<footer class="foot">
+    <p>版权&copy;嘉应学院&nbsp;|&nbsp;地理科学与旅游学院&nbsp;|&nbsp;GIS专业&nbsp;|&nbsp;219团队<br>
+        地址：广东省梅州市梅松路嘉应学院校本部&nbsp;&nbsp;邮编：514000&nbsp;&nbsp;维护：219团队<br>
+        申明：本网页不做任何商业用途，只做教学实验，最终解释权归团队所有！
+    </p>
+</footer>
+<a href="#top" id="scroll-top"></a>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="layer/layer.js"></script>
+
+</body>
+<script>
+    $(document).ready(function () {
+
+        //获得登录状态
+        $.post("/user/checkUserstatus", {}, function (result) {
+            if (result.code == 1) { //用户已登录
+                $("#unLogin").hide();
+                $("#alreadyLogin").show();
+                //取得用户昵称
+                var name = result.data.uname;
+                if (name == null) {
+                    $("#name").html("请设置昵称");
+                    setTimeout(function(){
+                        layer.msg('您的昵称尚未设置，为了不影响您的正常使用，  请前往个人中心设置相关信息!');
+                    }, 1000);
+                } else {
+                    $("#name").html(name);
+                }
+            } else {
+                $("#alreadyLogin").hide();
+            }
+        }, "json");
+
+
+        // 获得红色人物信息
+        $.post("/people/getPeopleMsg", {
+            "id": getUrlParam("id")
+        }, function (result) {
+            if (result.code == 1) { //获得一个人物信息
+                $("#peopleName").html(result.data.pname);
+                $("#peopleAdress").html(result.data.address);
+                $("#peopleImg").attr('src', "/image/redpeople/" + result.data.image);
+                $("#peopleText").html(result.data.experience);
+            }
+        }, "json");
+
+    });
+
+    // 获得url携带过来的参数值
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //退出用户
+    $("#loginOut").click(function () {
+        $.post("/user/loginOut", {}, function (response) {
+        }, "json");
+        window.location.href = "index.html";
+    });
+    //跳转至个人信息页
+    $("#name").click(function () {
+        window.location.href = "center.html";
+    });
+
+    //下一章
+    function nextPeople() {
+        var pid = +getUrlParam("id") + 1;
+        if (pid>500){
+            alert("没有更多了，请期待我们的更新！");
+            return;
+        }
+        window.location.href = "great_details.html?id=" + pid;
+    }
+
+    //上一章
+    function prevPeople() {
+        var pid = +getUrlParam("id") - 1;
+        if (pid<=0){
+            alert("已经到达第一个！");
+            return;
+        }
+        window.location.href = "great_details.html?id=" + pid;
+    }
+</script>
+
+
+</html>
